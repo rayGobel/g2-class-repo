@@ -6,13 +6,13 @@ section.currency-calculator.section
 
         .field
           label.label
-            | Currency From
+            | Currency From {{ selectedCurrency }}
           .control
             .select
-              select
-                option
+              select(v-model="selectedCurrency")
+                option(value="USD")
                   | USD - United States Dollar
-                option
+                option(value="IDR")
                   | IDR - Indonesian Rupiah
 
         .field
@@ -95,4 +95,32 @@ const mockApiResponse = {
     'BRL': 4.4721
   }
 }
+
+export default {
+  data: function () {
+    return {
+      selectedCurrency: ''
+    }
+  },
+  beforeMount: function () {
+    console.log('calling beforeMount')
+  },
+  mounted: function () {
+    console.log('calling mounted')
+  },
+  beforeUpdate: function () {
+    console.log('calling beforeUpdate')
+  },
+  updated: function () {
+    console.log('calling updated')
+  }
+}
 </script>
+
+<style lang="scss">
+$RED: red;
+
+.red-bg {
+  background-color: adjust-hue($RED, 30%);
+}
+</style>
