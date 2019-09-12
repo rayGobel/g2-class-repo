@@ -1,17 +1,22 @@
 <template lang="pug">
-  #app.columns
-    CurrencyList(v-bind:currencies="currencies").column
+  #app.section
+    .columns
+      Counter(v-model="stNum").column
+      p.column
+        | {{ stNum }}
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import CurrencyList from './components/CurrencyList'
+import Counter from './components/Counter'
 import 'bulma/css/bulma.min.css'
 
 export default {
   name: 'app',
   data () {
     return {
+      stNum: 100,
       courseName: 'G2Lab Course - Data',
       currencies: [
         {
@@ -40,7 +45,8 @@ export default {
   },
   components: {
     HelloWorld,
-    CurrencyList
+    CurrencyList,
+    Counter
   }
 }
 </script>
