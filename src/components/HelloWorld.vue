@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1>{{ dob }}</h1>
+    <h1>{{ uppercaseMsg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -36,7 +38,13 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    dob: String
+  },
+  computed: {
+    uppercaseMsg () {
+      return this.msg ? this.msg.toUpperCase() : this.msg
+    }
   }
 }
 </script>

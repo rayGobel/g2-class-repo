@@ -1,28 +1,46 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  #app.columns
+    CurrencyList(v-bind:currencies="currencies").column
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import CurrencyList from './components/CurrencyList'
+import 'bulma/css/bulma.min.css'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      courseName: 'G2Lab Course - Data',
+      currencies: [
+        {
+          label: 'United States Dollar',
+          value: 'USD'
+        },
+        {
+          label: 'Indonesian Rupiah',
+          value: 'IDR'
+        },
+        {
+          label: 'British Pound sterling',
+          value: 'GBP'
+        },
+        {
+          label: 'Japanese Yen',
+          value: 'JPY'
+        }
+      ]
+
+    }
+  },
+  props: {
+  },
+  computed: {
+  },
   components: {
-    HelloWorld
+    HelloWorld,
+    CurrencyList
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
