@@ -1,11 +1,12 @@
 <template lang="pug">
   #app.columns
-    CurrencyList(v-bind:currencies="currencies").column
+    CurrencyConverter.column
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import CurrencyList from './components/CurrencyList'
+import CurrencyConverter from './components/CurrencyConverter'
 import 'bulma/css/bulma.min.css'
 
 export default {
@@ -40,7 +41,8 @@ export default {
   },
   components: {
     HelloWorld,
-    CurrencyList
+    CurrencyList,
+    CurrencyConverter
   }
 }
 </script>
