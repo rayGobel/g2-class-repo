@@ -35,3 +35,5 @@ which component for each route
 2. Change main App to render component corresponds to its route. Use `router-view`
 3. Create links by using `router-link`
 4. Note: you can make a button as a link
+5. Passing props to a component can be done with vue-router via its route parameter
+6. Those are the basics of vue-router

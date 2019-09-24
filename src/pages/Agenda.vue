@@ -29,7 +29,7 @@
           td
             .field.is-grouped
               p.control
-                a.button
+                router-link(to="agenda/1").button
                   span.icon.is-small
                     i.fas.fa-eye
                   span
@@ -50,7 +50,7 @@
           td
             .field.is-grouped
               p.control
-                a.button
+                router-link(to="agenda/2").button
                   span.icon.is-small
                     i.fas.fa-eye
                   span
@@ -71,7 +71,7 @@
           td
             .field.is-grouped
               p.control
-                a.button
+                router-link(to="agenda/3").button
                   span.icon.is-small
                     i.fas.fa-eye
                   span
