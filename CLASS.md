@@ -50,6 +50,8 @@ Vuex consist of several concepts in state management.
 2. Getters
   - A modifier on how to access app state
 3. Mutations
+  - Mutations take a state, and replace it with an updated state
+  - Mutations are synchronous
 4. Actions
 5. Modules
 
@@ -57,4 +59,4 @@ Vuex consist of several concepts in state management.
 
 1. Create a store to store all state related module/class
 2. Register to main vue js app
-3. Register state
+3. Register state, getters, mutations, actions
