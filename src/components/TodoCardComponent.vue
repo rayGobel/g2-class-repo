@@ -6,10 +6,10 @@
   .card-content
     .content
       | {{ todo.description.content }}
-  footer.card-footer(v-if="!isCompleted")
-    a(href="#").card-footer-item
+  footer.card-footer(v-if="!isCompleted && !isDiscarded")
+    a(href="#" @click="$store.dispatch('discardTodo', todo)").card-footer-item
       | Discard
-    a(href="#").card-footer-item
+    a(href="#" @click="$store.dispatch('setTodoComplete', todo)").card-footer-item
       | Done
 </template>
 
@@ -20,12 +20,22 @@ export default {
   computed: {
     isCompletedClass () {
       return {
-        'has-text-success': this.isCompleted
+        'has-text-success': this.isCompleted && !this.isDiscarded,
+        'is-discarded': this.isDiscarded
       }
     },
     isCompleted () {
       return this.todo.status === 'completed'
+    },
+    isDiscarded () {
+      return this.todo.status === 'discarded'
     }
   }
 }
 </script>
+
+<style>
+.is-discarded {
+  text-decoration: line-through;
+}
+</style>

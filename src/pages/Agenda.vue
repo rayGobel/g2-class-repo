@@ -38,7 +38,7 @@
                   span
                     | View
               p.control
-                a.button.is-danger
+                a.button.is-danger(@click="$store.commit('deleteTodo', todo.id)")
                   span.icon.is-small
                     i.fas.fa-trash
                   span

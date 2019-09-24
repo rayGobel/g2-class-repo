@@ -50,7 +50,7 @@ export default {
         status: 'incomplete',
         id: uuid()
       }
-      this.$store.commit('addNewTodo', { todo })
+      this.$store.dispatch('addNewTodo', todo)
     }
   }
 }
