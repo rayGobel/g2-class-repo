@@ -8,45 +8,19 @@
 
   .container.hs-content
     .columns
-      .column
-        .card
-          header.card-header
-            p.card-header-title
-              | Learn Vue Router
-          .card-content
-            .content
-              | Descriptive text on how to learn vue-router
-          footer.card-footer
-            a(href="#").card-footer-item
-              | Discard
-            a(href="#").card-footer-item
-              | Done
-
-      .column
-        .card
-          header.card-header
-            p.card-header-title
-              | Learn Vuex
-          .card-content
-            .content
-              | Descriptive text on how to learn vuex
-          footer.card-footer
-            a(href="#").card-footer-item
-              | Discard
-            a(href="#").card-footer-item
-              | Done
-
-      .column
-        .card
-          header.card-header
-            p.card-header-title
-              | Learn how to use both
-          .card-content
-            .content
-              | Descriptive text on how to learn vue-router and vuex
-          footer.card-footer
-            a(href="#").card-footer-item
-              | Discard
-            a(href="#").card-footer-item
-              | Done
+      .column(v-for="todo in todos" :key="todo.id")
+        todo-card-component(:todo="todo")
 </template>
+
+<script>
+import TodoCardComponent from '@/components/TodoCardComponent'
+import todos from '@/mocks/todos'
+
+export default {
+  name: 'HomePageComponent',
+  data () {
+    return { todos }
+  },
+  components: { TodoCardComponent }
+}
+</script>
