@@ -10,9 +10,13 @@
     .columns
       .column(v-for="todo in todos" :key="todo.id")
         todo-card-component(:todo="todo")
+
+  .container.hs-new-item
+    new-todo-component
 </template>
 
 <script>
+import NewTodoComponent from '@/components/NewTodoComponent'
 import TodoCardComponent from '@/components/TodoCardComponent'
 
 export default {
@@ -22,6 +26,6 @@ export default {
       return this.$store.state.todos
     }
   },
-  components: { TodoCardComponent }
+  components: { TodoCardComponent, NewTodoComponent }
 }
 </script>

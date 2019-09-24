@@ -6,6 +6,9 @@
 
   hr
 
+  .container.tl-new-item
+    new-todo-component
+
   .container.tl-content
     table.table.is-fullwidth
       thead
@@ -44,6 +47,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import NewTodoComponent from '@/components/NewTodoComponent'
 
 export default {
   name: 'AgendaComponent',
@@ -51,6 +55,7 @@ export default {
     ...mapState([
       'todos'
     ])
-  }
+  },
+  components: { NewTodoComponent }
 }
 </script>
