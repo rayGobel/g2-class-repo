@@ -19,59 +19,17 @@
           th
             | Action
       tbody
-        tr
+        tr(v-for="todo in todos" :key="todo.id")
           td
-            | Learn Vue Router
+            | {{ todo.title }}
           td
-            | {{ Date.now() }}
+            | {{ todo.createdAt }}
           td
-            | Not Yet
-          td
-            .field.is-grouped
-              p.control
-                router-link(to="agenda/1").button
-                  span.icon.is-small
-                    i.fas.fa-eye
-                  span
-                    | View
-              p.control
-                a.button.is-danger
-                  span.icon.is-small
-                    i.fas.fa-trash
-                  span
-                    | Delete
-        tr
-          td
-            | Learn Vuex
-          td
-            | {{ Date.now() }}
-          td
-            | Not Yet
+            | {{ todo.status }}
           td
             .field.is-grouped
               p.control
-                router-link(to="agenda/2").button
-                  span.icon.is-small
-                    i.fas.fa-eye
-                  span
-                    | View
-              p.control
-                a.button.is-danger
-                  span.icon.is-small
-                    i.fas.fa-trash
-                  span
-                    | Delete
-        tr
-          td
-            | Learn Both
-          td
-            | {{ Date.now() }}
-          td
-            | Not Yet
-          td
-            .field.is-grouped
-              p.control
-                router-link(to="agenda/3").button
+                router-link(:to="{ path: `/agenda/${todo.id}` }").button
                   span.icon.is-small
                     i.fas.fa-eye
                   span
@@ -83,3 +41,16 @@
                   span
                     | Delete
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  name: 'AgendaComponent',
+  computed: {
+    ...mapState([
+      'todos'
+    ])
+  }
+}
+</script>

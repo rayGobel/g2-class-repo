@@ -14,12 +14,13 @@
 
 <script>
 import TodoCardComponent from '@/components/TodoCardComponent'
-import todos from '@/mocks/todos'
 
 export default {
   name: 'HomePageComponent',
-  data () {
-    return { todos }
+  computed: {
+    todos () {
+      return this.$store.state.todos
+    }
   },
   components: { TodoCardComponent }
 }

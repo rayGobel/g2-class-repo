@@ -1,23 +1,25 @@
 import Vue from 'vue'
 import App from './App.vue'
-
-// Import vue-router to be used on this application
 import VueRouter from 'vue-router'
 
-// then, import routes to be used with vue-router
+// Import vuex to be used on this application
+import Vuex from 'vuex'
+
 import routes from '@/routes'
+// Then import store to be used
+import stores from '@/stores'
 
-// Register vue-router to global vue so it is accessible
-// on all vue components
 Vue.use(VueRouter)
-
-// Create router object
+// Register Vuex to be used on global Vue instance
+Vue.use(Vuex)
 const router = new VueRouter({ routes })
+const store = new Vuex.Store(stores)
 
 Vue.config.productionTip = false
 
 // Use router in the main vuejs app
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
