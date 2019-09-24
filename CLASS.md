@@ -19,3 +19,11 @@
 * Create application structure in the form of state and mutations
 * Make communication between components simpler regardless of
 component hierarchy
+
+## Installation
+
+Use these command to install both vue-router and vuex:
+
+```js
+npm install --save vue-router vuex
+```
