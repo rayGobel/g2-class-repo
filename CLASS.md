@@ -27,3 +27,11 @@ Use these command to install both vue-router and vuex:
 ```js
 npm install --save vue-router vuex
 ```
+
+## Using Vue-Router
+
+1. Create `routes` to list all available routes in your application and
+which component for each route
+2. Change main App to render component corresponds to its route. Use `router-view`
+3. Create links by using `router-link`
+4. Note: you can make a button as a link

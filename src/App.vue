@@ -1,46 +1,29 @@
 <template lang="pug">
-  #app.columns
-    CurrencyList(v-bind:currencies="currencies").column
+  section#app.section
+    nav.level
+      ul.level-right
+        li.level-item
+          router-link(to="/").button.is-outlined
+            | Home
+        li.level-item
+          router-link(to="/agenda").button.is-outlined
+            | Agenda
+        li.level-item
+          router-link(to="/history").button.is-outlined
+            | History
+    .container.main-content
+      // change components to 'router-view'
+      router-view
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import CurrencyList from './components/CurrencyList'
-import 'bulma/css/bulma.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 export default {
-  name: 'app',
-  data () {
-    return {
-      courseName: 'G2Lab Course - Data',
-      currencies: [
-        {
-          label: 'United States Dollar',
-          value: 'USD'
-        },
-        {
-          label: 'Indonesian Rupiah',
-          value: 'IDR'
-        },
-        {
-          label: 'British Pound sterling',
-          value: 'GBP'
-        },
-        {
-          label: 'Japanese Yen',
-          value: 'JPY'
-        }
-      ]
-
-    }
-  },
-  props: {
-  },
-  computed: {
-  },
-  components: {
-    HelloWorld,
-    CurrencyList
-  }
+  name: 'G2ClassApp'
 }
 </script>
+
+<style lang="scss">
+@import 'bulma/bulma.sass';
+</style>
